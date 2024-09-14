@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Navbar } from "./Components/Navbar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -18,6 +19,8 @@ export const metadata: Metadata = {
   description: "Next Js Image Optimization",
 };
 
+export const revalidate = 3600
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -28,6 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Navbar />
         <main className="max-w-6xl mx-auto">{children}</main>
       </body>
     </html>
