@@ -9,7 +9,7 @@ const Search = () => {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    router.push(`/results/${search}`);
+    search && router.push(`/results/${search}`);
     setSearch("");
   };
 

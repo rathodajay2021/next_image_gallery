@@ -13,10 +13,10 @@ export default function Footer({ topic, nextPage, page, prevPage }: Props) {
   const pageNumbers: number[] = [];
 
   if (prevPage && nextPage) {
-    for (let i = parseInt(prevPage) + 1; 1 < parseInt(nextPage); i++) {
-      pageNumbers.push(i);
+    for (let i = parseInt(prevPage) + 1; i < parseInt(nextPage); i++) {
+      pageNumbers.push(i)
     }
-  }
+}
 
   const nextPageArea = nextPage ? (
     <Link
